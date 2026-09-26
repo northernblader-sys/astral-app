@@ -3,9 +3,9 @@ package com.astralofthesun.app.data
 /**
  * Placeholder data ONLY for systems that genuinely have no API endpoint on
  * the bot server yet: character roster, friends, notifications. Pokémon
- * party and dungeons are now REAL — loaded live in Astral.kt from
- * /api/pokemon/* and /api/dungeon/*. This file exists so it's obvious, at
- * a glance, which things are still fake.
+ * party and dungeons are now REAL — loaded live in Astral.kt from the
+ * /api/pokemon and /api/dungeon endpoints. This file exists so it's
+ * obvious, at a glance, which things are still fake.
  */
 object PlaceholderData {
 

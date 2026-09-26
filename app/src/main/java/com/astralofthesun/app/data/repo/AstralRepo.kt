@@ -39,8 +39,9 @@ import kotlinx.serialization.Serializable
  * Every call in this file is a REAL request to the bot's production API —
  * the same server the WhatsApp bot and the web client use. There is no
  * mock layer here. This now includes Pokémon party management
- * (/api/pokemon/*) and dungeon combat (/api/dungeon/*). Player-to-player
- * transfer (/api/transfer/*) has no backend yet and is NOT in this file.
+ * (the /api/pokemon endpoints) and dungeon combat (the /api/dungeon
+ * endpoints). Player-to-player transfer (the /api/transfer endpoints)
+ * has no backend yet and is NOT in this file.
  */
 class AstralRepo(context: Context) {
 
@@ -110,7 +111,7 @@ class AstralRepo(context: Context) {
         client.tokenStore.setToken(null)
     }
 
-    /* ── pokémon (real endpoints — /api/pokemon/*) ───────────────────── */
+    /* ── pokémon (real endpoints — the /api/pokemon family) ───────────── */
 
     suspend fun party(): PartyResponse = client.get("/pokemon/party")
 
@@ -143,7 +144,7 @@ class AstralRepo(context: Context) {
     suspend fun giveMon(id: String, targetUsername: String): GiveResponse =
         client.post("/pokemon/$id/give", GiveBody(targetUsername))
 
-    /* ── dungeon (real endpoints — /api/dungeon/*) ───────────────────── */
+    /* ── dungeon (real endpoints — the /api/dungeon family) ───────────── */
 
     suspend fun dungeonList(): DungeonListResponse = client.get("/dungeon/list")
 
